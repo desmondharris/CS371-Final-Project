@@ -1,0 +1,9 @@
+function entropy = findEntropy(vect)
+    entropy = 0;
+    for i = 1:5
+        prob = sum(vect == i)/length(vect);
+        entropy = entropy + (prob*log2(prob));
+    end
+end
+%(amount of times someone put 1,2,3 / total data points)*
+%(entropy of subset of responses for 1,2,3)

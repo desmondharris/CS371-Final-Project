@@ -1,0 +1,8 @@
+function informationGain = findInfGain(x,data,output)
+    entropy = findEntropy(output);
+    minus = findEntropy(output(find(data(:,x)==1)));
+    minus = minus + length(ind(data(:,x)==3)) *....
+    (findEntropy(output(find(data(:,x)==2))));
+    minus = minus + findEntropy(output(find(data(:,x)==3)));
+    informationGain = entropy - minus;
+end
